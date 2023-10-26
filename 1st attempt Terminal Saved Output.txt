@@ -1,0 +1,296 @@
+nyangers@192 workspace % git status
+xcrun: error: invalid active developer path (/Library/Developer/CommandLineTools), missing xcrun at: /Library/Developer/CommandLineTools/usr/bin/xcrun
+nyangers@192 workspace % pwd
+/Users/nyangers/workspace
+nyangers@192 workspace % git clone https://github.com/nyangers3/jordan-playground.git
+xcrun: error: invalid active developer path (/Library/Developer/CommandLineTools), missing xcrun at: /Library/Developer/CommandLineTools/usr/bin/xcrun
+nyangers@192 workspace % xcode-select --install
+
+xcode-select: note: install requested for command line developer tools
+nyangers@192 workspace % git status
+xcrun: error: invalid active developer path (/Library/Developer/CommandLineTools), missing xcrun at: /Library/Developer/CommandLineTools/usr/bin/xcrun
+nyangers@192 workspace % git status
+fatal: not a git repository (or any of the parent directories): .git
+nyangers@192 workspace %  git clone https://github.com/nyangers3/jordan-playground.git
+Cloning into 'jordan-playground'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Receiving objects: 100% (3/3), done.
+nyangers@192 workspace % ls
+analytics		jordan			kzhn-api
+feedback.viaacademy.com	jordan-playground	kzhn-cf-analytics
+git-101			kaizhan.code-workspace
+nyangers@192 workspace % pwd
+/Users/nyangers/workspace
+nyangers@192 workspace % cd jordan-playground
+nyangers@192 jordan-playground % pwd
+/Users/nyangers/workspace/jordan-playground
+nyangers@192 jordan-playground % ls
+README.md
+nyangers@192 jordan-playground % git add newfile.txt
+fatal: pathspec 'newfile.txt' did not match any files
+nyangers@192 jordan-playground % git open README.md 
+git: 'open' is not a git command. See 'git --help'.
+
+The most similar commands are
+	clean
+	clone
+	notes
+	prune
+nyangers@192 jordan-playground % git --help
+usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           [--super-prefix=<path>] [--config-env=<name>=<envvar>]
+           <command> [<args>]
+
+These are common Git commands used in various situations:
+
+start a working area (see also: git help tutorial)
+   clone     Clone a repository into a new directory
+   init      Create an empty Git repository or reinitialize an existing one
+
+work on the current change (see also: git help everyday)
+   add       Add file contents to the index
+   mv        Move or rename a file, a directory, or a symlink
+   restore   Restore working tree files
+   rm        Remove files from the working tree and from the index
+
+examine the history and state (see also: git help revisions)
+   bisect    Use binary search to find the commit that introduced a bug
+   diff      Show changes between commits, commit and working tree, etc
+   grep      Print lines matching a pattern
+   log       Show commit logs
+   show      Show various types of objects
+   status    Show the working tree status
+
+grow, mark and tweak your common history
+   branch    List, create, or delete branches
+   commit    Record changes to the repository
+   merge     Join two or more development histories together
+   rebase    Reapply commits on top of another base tip
+   reset     Reset current HEAD to the specified state
+   switch    Switch branches
+   tag       Create, list, delete or verify a tag object signed with GPG
+
+collaborate (see also: git help workflows)
+   fetch     Download objects and refs from another repository
+   pull      Fetch from and integrate with another repository or a local branch
+   push      Update remote refs along with associated objects
+
+'git help -a' and 'git help -g' list available subcommands and some
+concept guides. See 'git help <command>' or 'git help <concept>'
+to read about a specific subcommand or concept.
+See 'git help git' for an overview of the system.
+nyangers@192 jordan-playground % touch newfile.txt
+nyangers@192 jordan-playground % ls
+README.md	newfile.txt
+nyangers@192 jordan-playground % open newfile.txt 
+nyangers@192 jordan-playground % git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	newfile.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+nyangers@192 jordan-playground % touch first-blank-python-code.py
+nyangers@192 jordan-playground % ls
+README.md			newfile.txt
+first-blank-python-code.py
+nyangers@192 jordan-playground % open first-blank-python-code.py 
+nyangers@192 jordan-playground % touch football_results.json
+nyangers@192 jordan-playground % open football_results.json 
+nyangers@192 jordan-playground % touch football_results.csv
+nyangers@192 jordan-playground % open football_results.csv      
+nyangers@192 jordan-playground % open football_results.csv      
+nyangers@192 jordan-playground % git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	first-blank-python-code.py
+	football_results.csv
+	newfile.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+nyangers@192 jordan-playground % git add all
+fatal: pathspec 'all' did not match any files
+nyangers@192 jordan-playground % git add
+Nothing specified, nothing added.
+hint: Maybe you wanted to say 'git add .'?
+hint: Turn this message off by running
+hint: "git config advice.addEmptyPathspec false"
+nyangers@192 jordan-playground % git add all-
+fatal: pathspec 'all-' did not match any files
+nyangers@192 jordan-playground % git add --aa
+error: unknown option `aa'
+usage: git add [<options>] [--] <pathspec>...
+
+    -n, --dry-run         dry run
+    -v, --verbose         be verbose
+
+    -i, --interactive     interactive picking
+    -p, --patch           select hunks interactively
+    -e, --edit            edit current diff and apply
+    -f, --force           allow adding otherwise ignored files
+    -u, --update          update tracked files
+    --renormalize         renormalize EOL of tracked files (implies -u)
+    -N, --intent-to-add   record only the fact that the path will be added later
+    -A, --all             add changes from all tracked and untracked files
+    --ignore-removal      ignore paths removed in the working tree (same as --no-all)
+    --refresh             don't add, only refresh the index
+    --ignore-errors       just skip files which cannot be added because of errors
+    --ignore-missing      check if - even missing - files are ignored in dry run
+    --sparse              allow updating entries outside of the sparse-checkout cone
+    --chmod (+|-)x        override the executable bit of the listed files
+    --pathspec-from-file <file>
+                          read pathspec from file
+    --pathspec-file-nul   with --pathspec-from-file, pathspec elements are separated with NUL character
+
+nyangers@192 jordan-playground % git add --all
+nyangers@192 jordan-playground % git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   first-blank-python-code.py
+	new file:   football_results.csv
+	new file:   newfile.txt
+
+nyangers@192 jordan-playground % git commit -m'1st commit and v1 of the CFC Vs AFC file'
+[main faec34d] 1st commit and v1 of the CFC Vs AFC file
+ 3 files changed, 118 insertions(+)
+ create mode 100644 first-blank-python-code.py
+ create mode 100644 football_results.csv
+ create mode 100644 newfile.txt
+nyangers@192 jordan-playground % git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+nyangers@192 jordan-playground % git push origin/main
+fatal: 'origin/main' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+nyangers@192 jordan-playground % git branch
+* main
+nyangers@192 jordan-playground % checkout whoops_should_have_made_this_branch
+zsh: command not found: checkout
+nyangers@192 jordan-playground % git checkout whoops_should_have_made_this_branch_earlier
+error: pathspec 'whoops_should_have_made_this_branch_earlier' did not match any file(s) known to git
+nyangers@192 jordan-playground % git branch
+* main
+nyangers@192 jordan-playground % git branch whoops                      
+nyangers@192 jordan-playground % git branch
+* main
+  whoops
+nyangers@192 jordan-playground % git branch whoops_I_should_have_made_this_branch_right_away 
+nyangers@192 jordan-playground % git checkout whoops
+Switched to branch 'whoops'
+nyangers@192 jordan-playground % git push main
+fatal: 'main' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+nyangers@192 jordan-playground % pwd  
+/Users/nyangers/workspace/jordan-playground
+nyangers@192 jordan-playground % git status
+On branch whoops
+nothing to commit, working tree clean
+nyangers@192 jordan-playground % git help
+usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           [--super-prefix=<path>] [--config-env=<name>=<envvar>]
+           <command> [<args>]
+
+These are common Git commands used in various situations:
+
+start a working area (see also: git help tutorial)
+   clone     Clone a repository into a new directory
+   init      Create an empty Git repository or reinitialize an existing one
+
+work on the current change (see also: git help everyday)
+   add       Add file contents to the index
+   mv        Move or rename a file, a directory, or a symlink
+   restore   Restore working tree files
+   rm        Remove files from the working tree and from the index
+
+examine the history and state (see also: git help revisions)
+   bisect    Use binary search to find the commit that introduced a bug
+   diff      Show changes between commits, commit and working tree, etc
+   grep      Print lines matching a pattern
+   log       Show commit logs
+   show      Show various types of objects
+   status    Show the working tree status
+
+grow, mark and tweak your common history
+   branch    List, create, or delete branches
+   commit    Record changes to the repository
+   merge     Join two or more development histories together
+   rebase    Reapply commits on top of another base tip
+   reset     Reset current HEAD to the specified state
+   switch    Switch branches
+   tag       Create, list, delete or verify a tag object signed with GPG
+
+collaborate (see also: git help workflows)
+   fetch     Download objects and refs from another repository
+   pull      Fetch from and integrate with another repository or a local branch
+   push      Update remote refs along with associated objects
+
+'git help -a' and 'git help -g' list available subcommands and some
+concept guides. See 'git help <command>' or 'git help <concept>'
+to read about a specific subcommand or concept.
+See 'git help git' for an overview of the system.
+nyangers@192 jordan-playground % git push
+fatal: The current branch whoops has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin whoops
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+nyangers@192 jordan-playground % git checkout main
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+nyangers@192 jordan-playground % git push
+Enumerating objects: 6, done.
+Counting objects: 100% (6/6), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 1.79 KiB | 1.79 MiB/s, done.
+Total 5 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/nyangers3/jordan-playground.git
+   a0068a8..faec34d  main -> main
+nyangers@192 jordan-playground % git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+nyangers@192 jordan-playground % git log
+commit faec34df43d15e62ddc1148c52eeb7edb1990187 (HEAD -> main, origin/main, origin/HEAD, whoops_I_should_have_made_this_branch_right_away, whoops)
+Author: nyangers3 <jordan_nyang@aol.co.uk>
+Date:   Thu Oct 26 01:57:53 2023 +0100
+
+    1st commit and v1 of the CFC Vs AFC file
+
+commit a0068a8811534aa42771186a97923463c14c1c5a
+Author: nyangers3 <115697497+nyangers3@users.noreply.github.com>
+Date:   Thu Oct 26 00:25:02 2023 +0100
+
+    Initial commit
+nyangers@192 jordan-playground % 
