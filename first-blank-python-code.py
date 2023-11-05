@@ -16,7 +16,7 @@ chelsea_vs_arsenal_results = data
 ## I need to find out number of games, biggest win, longest winning streak, most wins, goal different, competition with most % win for CFC & AFC
 number_of_games = len(chelsea_vs_arsenal_results)
 
-#below was from the help of chat gpt
+#below was from the help of chat gpt. It finds the instance with the biggest scoreline deficit
 def margin_of_victory(game):
     home_score, away_score = map(int, game['Score'].split('-'))
     return abs(home_score - away_score)
@@ -28,6 +28,9 @@ biggest_win = max(chelsea_vs_arsenal_results, key=margin_of_victory)
 if 'W' in biggest_win['Result']:
     team_who_is_biggest_winnah = 'Chelsea'
 else: team_who_is_biggest_winnah = 'Arsenal'
+
+
+#below I am going to try and find out longest winning streak
 
 
 ##below everything will be printed
