@@ -5,3 +5,9 @@ Arsenal were robbed yesterday. Mostly for Newcastle still having 10 men, but als
 
 Jordan's newest change
 
+sam_function():
+  the_string = 'This function belongs to Sam'
+  return the_string
+
+sam_string = sam_function()
+print(sam_string)
