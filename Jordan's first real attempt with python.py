@@ -38,8 +38,6 @@ Game with the biggest win:
 {biggest_win['Date']} - {team_who_is_biggest_winnah} won {biggest_win['Score']} in the {biggest_win['Competition']}
 ''')
 
-
-
 #code below is from chatgpt (BUT I ADDED END STREAK!)
 current_streak = 0
 longest_streak = 0
@@ -48,8 +46,10 @@ winning_streak_start_date = None
 winning_streak_team = None
 winning_streak_end_date = None #JN adding end date
 
-with open('football_results.csv', 'r') as csvfile:
-    reader = csv.reader(csvfile)
+def winning_streak_user_finction():
+
+    with open('football_results.csv', 'r') as csvfile:
+        reader = csv.reader(csvfile)
     
     # Skip the header row if your CSV has one
     next(reader)
@@ -78,10 +78,39 @@ with open('football_results.csv', 'r') as csvfile:
             longest_streak_team = winning_streak_team #give the longest streak name the result
             longest_streak_end_date = winning_streak_end_date #hoping the end of the streak
         
-       
         previous_winner = winner #the test that has just ran through the row is now upated to be the previous test
-
-
-
-print(f'''The longest winning streak was when {longest_streak_team} won {longest_streak} games in a row from {longest_streak_start_date} to {longest_streak_end_date}.
+        
+        print(f'''The longest winning streak was when {longest_streak_team} won {longest_streak} games in a row from {longest_streak_start_date} to {longest_streak_end_date}.
       ''')
+
+
+def how_many_wins(club_name): #I want to try and use def, and make something that I just have to pass Chelsea or Arsenal into the User defined function
+    import csv
+    
+    data = []
+
+    with open('football_results.csv','r') as csv_file:
+        csv_reader = csv.DictReader(csv_file)
+    for row in csv_reader:
+        data.append(row)
+        results = data
+        #chelsea_vs_arsenal_results = data
+        #number_of_games = len(chelsea_vs_arsenal_results)
+
+    if club_name == 'Chelsea': #I need to create a variable that stores a function that changes the club name to either W or L
+        count_wins = data.count('W')
+    else:
+        count_wins = data.count('L')
+
+    return count_wins
+        
+
+chelsea_wins = how_many_wins('Chelsea')
+arsenal_wins = how_many_wins('Arsenal')
+
+if chelsea_wins > arsenal_wins:
+    winningest_team = chelsea_wins
+else:
+    winningest_team = arsenal_wins
+
+print(winningest_team)
