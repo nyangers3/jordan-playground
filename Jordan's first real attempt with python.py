@@ -46,10 +46,12 @@ winning_streak_start_date = None
 winning_streak_team = None
 winning_streak_end_date = None #JN adding end date
 
+who_has_more_wins
 def winning_streak_user_finction():
 
     with open('football_results.csv', 'r') as csvfile:
         reader = csv.reader(csvfile)
+
     
     # Skip the header row if your CSV has one
     next(reader)
@@ -78,6 +80,7 @@ def winning_streak_user_finction():
             longest_streak_team = winning_streak_team #give the longest streak name the result
             longest_streak_end_date = winning_streak_end_date #hoping the end of the streak
         
+who_has_more_wins
         previous_winner = winner #the test that has just ran through the row is now upated to be the previous test
         
         print(f'''The longest winning streak was when {longest_streak_team} won {longest_streak} games in a row from {longest_streak_start_date} to {longest_streak_end_date}.
@@ -114,3 +117,12 @@ else:
     winningest_team = arsenal_wins
 
 print(winningest_team)
+
+#This is Jordan trying to make my own conflict
+#Just 
+# to 
+# cover 
+# more 
+# lines 
+# for 
+# conflict
